@@ -1,6 +1,7 @@
 *.aux
 *.log
 *.blg
+*.dvi
 template.pdf
 *.synctex.gz
 *.bbl

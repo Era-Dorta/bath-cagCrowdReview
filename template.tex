@@ -9,40 +9,33 @@
 
 \maketitle
 
-\begin{abstract}
-
-Crowd simulation and rendering has been an active research area for 
-X years.
-
-Citations can be done this way~\cite{Aubel2000}.
-
-\end{abstract}
-
-
 %% Required for all content. 
 
 \section{Introduction}
 
-Crowd simulation and rendering has been an active research area for 
-X years!!INCLUDE CITATION!!!. A crowd is much more than the collections of individuals
+%Include why crowd simulation is interesting in films and videogames????
+Crowd simulation and rendering has been an active research area since 1987 
+with the early work on bird flocks by \cite{Reynolds1987}, where it was
+shown that by implementing some local rules in each entity a coherent
+global behaviour could be achieved.
+ 
+A crowd is much more than the collections of individuals
 that form it. And as such the behaviour of the individuals could be
 affected by other members of the crowd. As the numbers in the crowd
 increase, the interrelations become quite computationally expensive.
 
 The problem to be tackled has actually several differentiated areas. Firstly
-there is a \textit{crowd generation problem}, as the modeller this easy to
+there is a \textit{crowd generation problem}, a modeller needs easy to
 use tools in order to set up a scene in which a crowd is present. Secondly,
-the crowd is a evolving entity so there are \textit{crowd dynamics} to model,
-that will govern the state of the crowd over time. Thirdly, the model should
+the crowd is an evolving entity so there are \textit{crowd dynamics} to model,
+which will govern the state of the crowd over time. Thirdly, the model should
 be presented to the user, so a \textit{rendering} stage is needed.
-
-The same tendency is observed on the rendering area. The first approach
-was the introduction of LOD !!INCLUDE CITATION!!!. 
 
 \section{Classification}
 
-As a general classification there are two main areas: real-time simulation
-and non real-time simulation.
+A clear line can be drawn between real-time simulation (games)
+and non real-time simulation (films). Since the requirements for this two types of simulation
+are quite different and so are the techniques used in each area.
 
 \subsection{Modelling Classifications}
 
@@ -63,7 +56,13 @@ simulations.
 \subsection{Rendering Classifications}
 
 The different types of rendering techniques can be classified in the 
-following groups. LOD techniques, impostors, mesh decimation,
+following groups: dynamically generated impostors first used by  \cite{Aubel2000}, 
+point-rendering techniques \cite{Wand2002}, geometry baking \cite{Ulicny2004} and dynamic
+meshes \cite{Ciechomski2005}.
+
+
+
+ LOD techniques, impostors, mesh decimation,
 mesh subdivision, cloth simulation.
 
 \begin{equation}
@@ -96,20 +95,6 @@ poor.
   \includegraphics[width=1.5in]{images/samplefigure}
   \caption{Sample illustration.}
 \end{figure}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
-
-\section{Latest advances}
-
-\subsection{Modelling advances}
-
-\subsection{Rendering advances}
-
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
