@@ -18,17 +18,18 @@ Crowds are encountered frequently, be it a large number of people in big shoppin
 While also other types of crowds are also common, such as schools of fish or flocks of birds.
 While motives for simulating them range from: \textit{film industry} where it is not always possible or economically viable to have a real crowd,also in \textit{video games} as the game world might have need for a crowd, including \textit{disaster prevention and management} where they are used to aid in the decision making process as they provided a new source of data. 
 
-Crowd simulation and rendering has been an active research area as early as 1987 with the work on birds flocks by \cite{Reynolds1987}.
-There, he proved that by implementing some local rules in each entity a coherent global behaviour could be achieved.
- 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of the individuals could be affected by other members of the crowd.
-As the numbers in the crowd increase, the interrelations become quite computationally expensive.
+History shows how in some cases crowd of people behave in a well organized manner, while in others its individual act selfishly abandoning all social norms.
+When simulating this interactions with a naive approach, as the numbers of individuals in the crowd increase the computational cost of the interrelations calculation increments exponentially.
 
-The problem to be tackled has actually several differentiated areas.
-Firstly there is a \textit{crowd generation problem}, a modeller needs easy to use tools in order to set up a scene in which a crowd is present.
-Secondly, the crowd is an evolving entity so there are \textit{crowd dynamics} to model, which will govern the state of the crowd over time.
+This problem has actually a number of clearly differentiated areas.
+Firstly there is a \textit{crowd generation} problem, a modeller needs user-friendly tools in order to set up a scene in which a crowd is present.
+Secondly the crowd is an evolving entity, so a \textit{crowd dynamics model} is required to govern the state of the crowd over time.
 Thirdly, the model should be presented to the user, so a \textit{rendering} stage is needed.
+
+Crowd simulation and rendering has been an active research area as early as 1987 with the work on birds flocks by \cite{Reynolds1987}.
+There, he proved that by implementing some local rules in each entity a coherent global behaviour could be achieved.
 
 \section{Classification}
 
