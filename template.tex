@@ -1,13 +1,77 @@
-\documentclass[conference]{acmsiggraph}
+%----------------------------------------------------------------------------------------
 
-\title{A review on crowd simulation and rendering}
+%\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[11pt,twocolumn]{article}
 
-\author{Garoe Dorta-Perez}
-\pdfauthor{Garoe Dorta-Perez}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{mathtools}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{15.0pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{20pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\params}{\boldsymbol{\theta}}
+\newcommand{\dn}[1]{\partial{#1}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Department Of Computer Science, University of Bath} \\ [5pt] % Your university, school and/or department name(s)
+\textsc{EngD in Digital Entertainment} \\ [5pt] 
+\horrule{0.7pt} \\[0.2cm] % Thin top horizontal rule
+\Huge A review on crowd simulation and rendering \\ % The assignment title
+\vspace{7 mm}
+\Large CM50244 \: Computer Animation and Games I \\
+\horrule{0.7pt} \\[0.0cm] % Thick bottom horizontal rule
+}
+\author{Garoe Dorta-Perez \\ \Large Unit Leader: Prof Phil Willis \\}  % Your name\\ 
 
 \begin{document}
+\vspace*{\fill}
+\begin{center}
+\begin{minipage}{1.0\textwidth}
 
-\maketitle
+\clearpage\maketitle % Print the title
+\thispagestyle{empty}
+
+\end{minipage}
+\end{center}
+\vfill
+\clearpage
+\setcounter{page}{1}
 
 %% Required for all content. 
 
@@ -21,7 +85,7 @@
 %Include why crowd simulation is interesting in films and videogames????
 Crowds are encountered frequently, be it a large number of people in big shopping area, on a popular sports event, or at a demonstration.
 While also other types of crowds are also common, such as schools of fish or flocks of birds.
-While motives for simulating them range from: \textit{film industry} where it is not always possible or economically viable to have a real crowd,also in \textit{video games} as the game world might have need for a crowd, including \textit{disaster prevention and management} where they are used to aid in the decision making process as they provided a new source of data. 
+While motives for simulating them range from: \textit{film industry} where it is not always possible or economically viable to have a real crowd,also in \textit{video games} as the game world might have need for a crowd, including \textit{disaster prevention and management} where they are used to aid in the decision making process as they provided a new source of data.
 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of the individuals could be affected by other members of the crowd.
@@ -131,6 +195,7 @@ In order to lower the rendering cost ~\cite{pratt1997humans} TODO CHANGE TO CITE
 
 \section{Conclusion}
 
-\bibliographystyle{acmsiggraph}
+%\bibliographystyle{acmsiggraph}
+\bibliographystyle{apalike}
 \bibliography{template}
 \end{document}
