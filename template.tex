@@ -103,7 +103,7 @@ There, he proved that by implementing some local rules in each entity a coherent
 \section{Classification}
 
 A clear line can be drawn between real-time simulation (games) and non real-time simulation (films).
-Since the requirements for this two types of simulation are quite different and so are the techniques used in each area.
+Since the requirements for each simulation are quite different and so are the techniques used in each area.
 
 \subsection{Modelling Classifications}
 
@@ -132,6 +132,15 @@ The different types of rendering techniques can be classified in the following g
 
 \section{Generating crowds}
 
+Before the crowd can be simulated or rendered it has to be generated.
+This task is usually has not been research as deeply as the rest.
+This step essentially involves setting the initial parameters at which the crowd operates.
+\cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
+His technique allows the user select an brush operator(create individual, orientation, color, etc) and apply it to on the crowd world domain.
+The affected individuals in the crowd will be those in sight in the screen domain.
+Therefore a intuitive approach as it is similar to what users as used to is provided.
+However it has certain limitations, as it is not possible to directly control the behaviour of the crowd and it is difficult to select individuals in cluttered environments.
+  
 This is the bulk of the paper, give what each paper proposed, and the shortcomings
 of it and if a new paper fix them
  
