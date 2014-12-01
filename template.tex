@@ -172,8 +172,19 @@ Animation variety
 LOOK AT Challenges in Crowd Simulation paper to fill this in
 
 \subsection{Dynamically Generated Impostors}
+
+Impostors are 2D pre-computed billboards used instead of the full 3D human model, thus reducing the cost of the rendering stage as shown by~\cite{Aubel2000}.
+However, when an impostor is rendered to an area larger than the impostor resolution, pixels from the impostor texture become noticeable.
+~\cite{Millan2006} presented a GPU impostor implementation, which also used pseudo-instancing for further performance gains~\cite{zelsnack2004glsl}.
+More recent advances were made by~\cite{Ghiletiuc2013} with a client-server approach for mobile devices.
+
 \subsection{Point-Rendering}
+
+
+
 \subsection{Dynamic Meshes}
+
+
 
 \section{Mayor milestones}
 
