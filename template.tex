@@ -118,10 +118,10 @@ Due to the challenging nature of big size crowds the most common approach is to 
 
 \subsection{Rendering Classifications}
 
-The different types of rendering techniques can be classified in the following groups: 
-\textbf{dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model,~\cite{Aubel2000}.
+The different types of rendering techniques can be classified in the following groups.
+\textbf{Dynamic mesh decimation} uses progressive meshes to obtain a coarser representation of the model mesh,~\cite{Hoppe1996}.
+\textbf{Dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model,~\cite{Aubel2000}.
 \textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh,~\cite{Wand2002}.
-\textbf{Dynamic meshes} take advantage of the shaders pipeline to dynamically render humans with a variety of colors, animation and appearance,~\cite{Ciechomski2005}.
 
 \section{Generating crowds}
 
@@ -177,6 +177,17 @@ Animation variety
 
 LOOK AT Challenges in Crowd Simulation paper to fill this in
 
+\subsection{Dynamic Mesh Decimation}
+
+Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternative to a traditional mesh.
+However this meshes can be used as a coarser representation, and consequently increasing performance.
+Provided that the decimation calculation is smaller than the total gain.
+A progressive mesh refinement GPU implementation was proposed by~\cite{Hu2009}.
+
+%Notes for the future, change to something better
+They never compare with other implementations, neither CPU or GPU.
+It looks like their code is not optimized and they only wanted to prove feasibility of the implementation. 
+
 \subsection{Dynamically Generated Impostors}
 
 Impostors are 2D pre-computed billboards used instead of the full 3D human model, thus reducing the cost of the rendering stage as shown by~\cite{Aubel2000}.
@@ -186,16 +197,19 @@ More recent advances were made by~\cite{Ghiletiuc2013} with a client-server appr
 
 \subsection{Point-Rendering}
 
+Point rendering uses points as a primitive to reduce the model complexity of the individuals in the crowd.
+Using less and less points as the model is further away from the camera.
 Multi-resolution point sample rendering in key frame animations achieves a rendering time independent of the complexity of the geometric model~\cite{Wand2002}.
 ~\cite{Larkin2010} presented a point-rendering method that would render at real-time by limiting the resources of the whole crowd and deciding each level of detail using Delaunay triangulation. 
 Where each vertex in the triangulation has a density value that is used to calculate the number of points to render.
 With small and medium crowds this technique works best, since with very large crowds the resources allocated for each instance might be too scarce.
 
-\subsection{Dynamic Meshes}
-
-
-
 \section{Conclusion}
+
+- Generation is an under-researched area, but crowd brush metaphor solve may of the issues
+- Simulation still sacrifices a lot with large crowds -> flow approach
+- Rendering there has a been a lot of work, previous processing in CPU moved to GPU
+- LOD techniques quite refined now, a lot of it is automatic, like LOD model generations or edition
 
 %\bibliographystyle{acmsiggraph}
 \bibliographystyle{apalike}
