@@ -187,8 +187,12 @@ More recent advances were made by~\cite{Ghiletiuc2013} with a client-server appr
 \subsection{Point-Rendering}
 
 Multi-resolution point sample rendering in key frame animations achieves a rendering time independent of the complexity of the geometric model~\cite{Wand2002}.
+~\cite{Larkin2010} presented a point-rendering method that would render at real-time by limiting the resources of the whole crowd and deciding each level of detail using Delaunay triangulation. 
+Where each vertex in the triangulation has a density value that is used to calculate the number of points to render.
+With small and medium crowds this technique works best, since with very large crowds the resources allocated for each instance might be too scarce.
 
 \subsection{Dynamic Meshes}
+
 
 
 \section{Conclusion}
