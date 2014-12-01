@@ -165,6 +165,8 @@ The main obstacle to overcome with crowd rendering is the amount of characters t
 Hence, the following techniques are design to make the rendering stage cheaper.
 Generally by applying a model complexity reduction that is still visually unnoticeable.
 
+As a general trend, there has been a shift of computation from the CPU to the programmable GPU with substantial increases in performance.
+
 How to achieve color variety
 
 Height change
@@ -184,26 +186,10 @@ More recent advances were made by~\cite{Ghiletiuc2013} with a client-server appr
 
 \subsection{Point-Rendering}
 
-
+Multi-resolution point sample rendering in key frame animations achieves a rendering time independent of the complexity of the geometric model~\cite{Wand2002}.
 
 \subsection{Dynamic Meshes}
 
-
-
-\section{Mayor milestones}
-
-With the advent of programmable GPU there has been a shift of general computation from the CPU to the GPU with substantial increases in performance.
-
-LOD techniques, impostors, mesh decimation, mesh subdivision, cloth simulation.
-
-In order to lower the rendering cost ~\cite{pratt1997humans} TODO CHANGE TO CITED BY OTHER AUTHOR taken from ~\cite{Aubel1999} used a LOD technique to be able to render crowds, however even though it  achieved real time performance the realism of the models was quite poor.
-
-
-%\begin{figure}[ht]
-%  \centering
-%  \includegraphics[width=1.5in]{images/samplefigure}
-%  \caption{Sample illustration.}
-%\end{figure}
 
 \section{Conclusion}
 
