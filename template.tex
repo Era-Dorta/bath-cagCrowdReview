@@ -81,6 +81,7 @@
 % ------------------------------------
 
 \section{Introduction}
+\label{intro}
 
 %Include why crowd simulation is interesting in films and videogames????
 Crowds are encountered frequently, be it a large number of people in big shopping area, on a popular sports event, or at a demonstration.
@@ -100,10 +101,12 @@ Thirdly, the model should be presented to the user, so a \textit{rendering} stag
 Crowd simulation and rendering has been an active research area as early as 1987 with the work on birds flocks by \cite{Reynolds1987}.
 There, he proved that by implementing some local rules in each entity a coherent global behaviour could be achieved.
 
-\section{Classification}
+\section{Classifications}
 
 A clear line can be drawn between real-time simulation (games) and non real-time simulation (films).
 Since the requirements for each simulation are quite different and so are the techniques used in each area.
+However, with such a broad area, a more detailed exploration is required.
+Consequently, each of the stages defined in section~\ref{intro} will be treated independently.
 
 \subsection{Modelling Classifications}
 
@@ -141,11 +144,12 @@ While also addressing the problem of populating vast empty areas efficiently.
 High level control of the motion is provided as the patches are editable in real time.
 %Or the high level of control is provided through to uses of patches????
 
-GIVE DRAWBACKS OF THIS PAPER
+CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 
 \section{Simulating crowds}
 
-Give a short overview of each paper and what is important and how it evolves
+As stated in section~\ref{intro}, following a naive approach leads to intractable simulation times in anything bigger than a small sized crowd.
+The following approaches haven been proposed.
 
 \subsection{Agent Based}
 
@@ -167,16 +171,6 @@ Generally by applying a model complexity reduction that is still visually unnoti
 
 As a general trend, there has been a shift of computation from the CPU to the programmable GPU with substantial increases in performance.
 
-How to achieve color variety
-
-Height change
-
-Accessories 
-
-Animation variety
-
-LOOK AT Challenges in Crowd Simulation paper to fill this in
-
 \subsection{Dynamic Mesh Decimation}
 
 Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternative to a traditional mesh.
@@ -189,6 +183,7 @@ They never compare with other implementations, neither CPU or GPU.
 It looks like their code is not optimized and they only wanted to prove feasibility of the implementation. 
 
 \subsection{Dynamically Generated Impostors}
+\label{subsec:DimGenImpostors}
 
 Impostors are 2D pre-computed billboards used instead of the full 3D human model, thus reducing the cost of the rendering stage as shown by~\cite{Aubel2000}.
 However, when an impostor is rendered to an area larger than the impostor resolution, pixels from the impostor texture become noticeable.
@@ -203,6 +198,11 @@ Multi-resolution point sample rendering in key frame animations achieves a rende
 ~\cite{Larkin2010} presented a point-rendering method that would render at real-time by limiting the resources of the whole crowd and deciding each level of detail using Delaunay triangulation. 
 Where each vertex in the triangulation has a density value that is used to calculate the number of points to render.
 With small and medium crowds this technique works best, since with very large crowds the resources allocated for each instance might be too scarce.
+
+\subsection{Achieving variety}
+
+There is a lot of research into getting color variety, height change, accessories, animation variety.
+As they provided a cheap way to have a varied crowd and with instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.
 
 \section{Conclusion}
 
