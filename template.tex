@@ -77,7 +77,7 @@
 
 % IMPORTANT
 % ------------------------------------
-% HAS TO BE 7 OR 8 PAGES LONG
+% HAS TO has 2000 words
 % ------------------------------------
 
 \section{Introduction}
@@ -118,17 +118,10 @@ Due to the challenging nature of big size crowds the most common approach is to 
 
 \subsection{Rendering Classifications}
 
-The different types of rendering techniques can be classified in the following groups: \textbf{dynamically generated impostors} first used by  \cite{Aubel2000}, \textbf{point-rendering} techniques \cite{Wand2002}, \textbf{geometry baking} \cite{Ulicny2004} and \textbf{dynamic meshes} \cite{Ciechomski2005}.
-
-%\begin{equation}
-% \sum_{j=1}^{z} j = \frac{z(z+1)}{2}
-%\end{equation}
-%
-%\begin{eqnarray}
-%x & \ll & y_{1} + \cdots + y_{n} \\
-%  & \leq & z
-%\end{eqnarray}
-
+The different types of rendering techniques can be classified in the following groups: 
+\textbf{dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model,~\cite{Aubel2000}.
+\textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh,~\cite{Wand2002}.
+\textbf{Dynamic meshes} take advantage of the shaders pipeline to dynamically render humans with a variety of colors, animation and appearance,~\cite{Ciechomski2005}.
 
 \section{Generating crowds}
 
@@ -137,28 +130,18 @@ This task is usually has not been research as deeply as the rest.
 This step essentially involves setting the initial parameters at which the crowd operates.
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
-His technique allows the user select an brush operator(create individual, orientation, color, etc) and apply it to on the crowd world domain.
-The affected individuals in the crowd will be those in sight in the screen domain.
-Therefore a intuitive approach as it is similar to what users as used to is provided.
-However it has certain limitations, as it is not possible to directly control the behaviour of the crowd and it is difficult to select individuals in cluttered environments.
+His technique allows the user select an brush operator(create individuals, change color, etc) and apply it in the crowd world space.
+Altered individuals in the crowd will be those in sight in the screen domain.
+Therefore an intuitive approach, as it is similar to what users as used to, is provided.
+However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.
 
 Some of the challenges were met by \cite{Jordao2014}, whose method introduces the concept of crowd patches.
-Such areas allow the user to control the crowd in trough a sculpting metaphor.
-Also addressing the problem of populating vast empty areas efficiently.
+Such areas allow the user to control the crowd through a sculpting metaphor.
+While also addressing the problem of populating vast empty areas efficiently.
 High level control of the motion is provided as the patches are editable in real time.
-  
-This is the bulk of the paper, give what each paper proposed, and the shortcomings
-of it and if a new paper fix them
- 
-Crowd brush paper
+%Or the high level of control is provided through to uses of patches????
 
-\subsection{??}
-
-a
-
-\subsection{??}
-
-a
+GIVE DRAWBACKS OF THIS PAPER
 
 \section{Simulating crowds}
 
@@ -190,7 +173,6 @@ LOOK AT Challenges in Crowd Simulation paper to fill this in
 
 \subsection{Dynamically Generated Impostors}
 \subsection{Point-Rendering}
-\subsection{Geometry Baking}
 \subsection{Dynamic Meshes}
 
 \section{Mayor milestones}
