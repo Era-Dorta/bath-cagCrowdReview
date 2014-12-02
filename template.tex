@@ -1,7 +1,8 @@
 %----------------------------------------------------------------------------------------
 
 %\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
-\documentclass[11pt,twocolumn]{article}
+\documentclass[11pt]{article}
+\usepackage{multicol}
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 %\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
@@ -62,23 +63,30 @@
 \begin{document}
 \vspace*{\fill}
 \begin{center}
-\begin{minipage}{1.0\textwidth}
-
-\clearpage\maketitle % Print the title
-\thispagestyle{empty}
-
-\end{minipage}
+	\begin{minipage}{1.0\textwidth}
+		\maketitle % Print the title
+		\thispagestyle{empty}
+	\end{minipage}
 \end{center}
-\vfill
-\clearpage
-\setcounter{page}{1}
 
-%% Required for all content. 
+\vfill %Space after the title
+\begin{abstract}
+In this paper a survey on crowd simulation techniques is presented.
+Surveyed papers range in the whole process of crowd simulation: evaluating crow generation, simulation and rendering.
+A representative paper is chosen, then important advances are outlined and lastly recent research is given.
+This is done separately for each section.
+\end{abstract}
+\vfill %Space after the abstract
 
 % IMPORTANT
 % ------------------------------------
 % HAS TO has 2000 words
 % ------------------------------------
+
+\clearpage %Start a new page
+\setcounter{page}{1}
+
+\begin{multicols}{2}
 
 \section{Introduction}
 \label{intro}
@@ -172,7 +180,7 @@ Nevertheless, this model is still quite simplistic......, real-time or not real-
 
 \subsection{Flow Based}
 
-aa
+\cite{hughes2003} proposed a flow model method to simulate large crowd behaviour.
 
 \subsection{Hybrid models}
 
@@ -237,4 +245,5 @@ As well as applying color modulation accelerated hardware on instances of the sa
 %\bibliographystyle{acmsiggraph}
 \bibliographystyle{apalike}
 \bibliography{template}
+\end{multicols}
 \end{document}
