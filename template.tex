@@ -241,7 +241,11 @@ In this paper they avoided computing each character’s mesh deformation using a
 - Animation diversity
 
 As well as applying color modulation accelerated hardware on instances of the same individual model.
-\cite{ruiz2013} proposed a memory efficient method to generate new animatable characters varying skin color, clothes and body size.
+\cite{ruiz2013} proposed a memory efficient method to generate new characters by varying skin color, clothes and body size.
+The author's method involves a preprocessing stage and a run time stage.
+In the first stage, assets are generated from the individuals, including texture maps, new animations, etc.
+This stage is done per body part mesh to increase asset reusability.
+While on the second stage new characters are animated using the previously generated assets. 
 
 \section{Conclusion}
 
