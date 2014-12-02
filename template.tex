@@ -68,7 +68,7 @@ For each relevant area or group, a representative paper is chosen, important con
 \setcounter{page}{1}
 
 \begin{multicols}{2}
-
+CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 \section{Introduction}
 \label{intro}
 
@@ -98,6 +98,7 @@ However, with such a broad area, a more detailed exploration is required.
 Consequently, each of the stages defined in section~\ref{intro} will be treated independently.
 
 \subsection{Modelling Classifications}
+\label{subsec:ModelClassification}
 
 In order to simulate crowd behaviour a number of approaches have been proposed.
 As they share certain similarities, they can be divided using a common criteria such as the simulation time  and the size of the modelled crowd.
@@ -110,13 +111,14 @@ Generally, agent based or entity based systems are used for small and medium cro
 While for big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
 
 \subsection{Rendering Classifications}
+\label{subsec:RenderingClassification}
 
 The different types of rendering techniques can be classified in the following groups.
 \textbf{Dynamic mesh decimation}, progressive meshes are used to obtain a coarser representation of the model mesh,~\cite{Hoppe1996}.
 \textbf{Dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model,~\cite{Aubel2000}.
 \textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh,~\cite{Wand2002}.
 
-\section{Generating crowds}
+\section{Generating Crowds}
 
 Before the crowd can be simulated or rendered it has to be generated.
 Unfortunately, this task has not been researched as deeply as the rest.
@@ -129,64 +131,60 @@ Edited individuals in the crowd will be those in sight in the screen domain.
 Therefore an intuitive approach is provided, as it is similar to what users as used to.
 However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.
 
-Some of the challenges were met by \cite{Jordao2014}, whose method introduces the concept of crowd patches.
-Such areas allow the user to control the crowd through a sculpting metaphor.
-While also addressing the problem of populating vast empty areas efficiently.
-High level control of the motion is provided as the patches are editable in real time.
+Some of the shortcomings of the previous work were met by \cite{Jordao2014}, whose method introduced the concept of crowd patches.
+Such patch areas define the crowd behaviour and can be edited through a sculpting metaphor, while also addressing the problem of populating vast empty areas efficiently.
+What is more, crowd motion can be modified on the fly as the patches are editable in real time.
 %Or the high level of control is provided through to uses of patches????
 
-CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
+\section{Simulating Crowds}
 
-\section{Simulating crowds}
+As stated in section~\ref{intro}, following a naive approach leads to intractable computing times in simulations that handle more than a small sized crowd.
+Below we describe in detail the approaches mentioned in section~\ref{subsec:ModelClassification}. 
 
-As stated in section~\ref{intro}, following a naive approach leads to intractable simulation times in anything bigger than a small sized crowd.
-The following approaches haven been proposed.
+\subsection{Entity Based}
 
-\subsection{Entity based Based}
-
-\cite{Helbing2000} proposed a model for where individuals are represented as particles with velocity, mass and forces.
-The actual individual desired is encoded in such components.
+\cite{Helbing2000} presented a model where individuals are represented as particles with velocity, mass and forces.
+All individual goals are encoded as values in such components.
 The model was created to simulate pedestrians in panic situations.
-\cite{batty2003} introduced a similar pedestrian model although for carnivals and parades.
-This model is based on a cellular automata where an individual step would be moving from the current cell to the next one.
-The model is constrained to evaluating safety policies and it only has an offline work mode.
+\cite{batty2003} introduced a similar pedestrian model although aimed at simulating carnivals and parades.
+The author's model is based on a cellular automata, where an agent step is encoding as moving from the current cell to a neighbour cell.
+This technique is constrained to evaluating safety policies and it only has an offline work mode.
 
 \subsection{Agent Based}
 
-\cite{helbing2002} did a complete study of a broad range scenarios of crowd behaviour, in panic and not panic situations.
-Providing a consistent  pedestrian common model for them.
-\cite{raupp2001} presented a three fold approach to agent based simulations: scripted behaviours, behavioural rules with events and reactions and external control to guide the behaviour.
-By controlling the complexity of the behaviours by group settings a flexible framework for controlling the crowd is provided.
-More recent techniques add a counterflow paradigm, where agents not only take into account trail formation but also collision avoidance~\cite{heliovaara2012}.
-Since previous methods created unrealistic jams and collision in counterflow situations.
+\cite{helbing2002} did a complete study of a broad range scenarios in crowd behaviour, with special attention at panic versus not panic crowd behaviour.
+For all the situations a common pedestrian model was derived.
+\cite{raupp2001} presented a three fold approach to agent based simulations: scripted behaviours, behavioural rules, with events and reactions, and external controls to guide the behaviour.
+Controlling the complexity of the behaviours by group settings provides a flexible framework for crowd editing.
+More recent techniques add a counterflow paradigm, where agents not only take into account trail formation but also collision avoidance, \cite{heliovaara2012}.
+Previous methods create unrealistic jams and collision in counterflow situations.
+However this technique is able to solve them successfully.
 Nevertheless, this model is still quite simplistic......, real-time or not real-time???
 
 \subsection{Flow Based}
 
-\cite{hughes2003} proposed a flow model method to simulate large crowd behaviour.
-By using intelligent fluid flow, which is makes the fluid prefer certain paths, i.e. avoiding excessive congestive areas, a working model for pedestrian simulation was achieved.
-However it would not account for crowd flow in the individual speed.
-Therefore lane formation is not observed. 
-The previous model was improved by \cite{treuille2006} by adding continuum dynamics.
-Fixing the afore mention problems as well as undesirable dynamics oscillations in Hughes's model. 
+\cite{hughes2003} proposed a flow model method to simulate large crowds behaviour based on intelligent fluid flow.
+An intelligent fluid tends to prefer certain paths, i.e. avoiding excessive congestive areas, achieving a more complete model for pedestrian simulation.
+However, it would not take into account crowd flow in the individual speeds, therefore preventing lane formation. 
+The previous model was improved by \cite{treuille2006} with the addition of continuum dynamics.
+Fixing the afore mention problems as well as undesirable oscillations in Hughes's model. 
 
-\subsection{Hybrid models}
+\subsection{Hybrid Models}
 
 \cite{Narain2009} presented a agent-fluid hybrid model.
-Each agent has a preferred velocity and path, however on densely populated regions a incomprehensibility flow factor comes into play.
-This factor prevents the agents from packing together too closely.
-More recently \cite{lin2014} proposed also a  agent-fluid hybrid solution to long-range collision avoidance.
-When a the density is below a certain threshold a discrete collision avoidance is used.
-While after the threshold a fluid based lookahead algorithm is used.
-This technique allows for increasingly complex behaviour such as a bigger group splitting in two to make space for a smaller group to go through it.
+Each agent has a preferred velocity and path, however on densely populated regions an incomprehensibility flow factor comes into play.
+This factor acts by preventing agents from packing together too closely.
+More recently \cite{lin2014} proposed also an agent-fluid hybrid solution to long-range collision avoidance.
+When the density is below a certain threshold a discrete collision avoidance is used,
+while after the threshold a fluid based lookahead algorithm controls the behaviour.
+This technique shows advanced complex behaviour, such as a bigger group splitting in two to make space for a smaller group to go through it.
 
-\section{Rendering crowds}
+\section{Rendering Crowds}
 
-The main obstacle to overcome with crowd rendering is the amount of characters to be rendered.
-Hence, the following techniques are design to make the rendering stage cheaper.
-Generally by applying a model complexity reduction that is still visually unnoticeable.
-
-As a general trend, there has been a shift of computation from the CPU to the programmable GPU with substantial increases in performance.
+The main obstacle to overcome with crowd rendering is how to simplify the scene in order to be rendered in real or feasible time.
+Hence, the goal in the following techniques is to reduce the computations in the rendering stage.
+A common approach consist of applying a model complexity reduction that is still visually unnoticeable.
+Bellow, we present in more detail the techniques commented in section~\ref{subsec:RenderingClassification} that are used to solve this issue.
 
 \subsection{Dynamic Mesh Decimation}
 
@@ -216,7 +214,7 @@ Multi-resolution point sample rendering in key frame animations achieves a rende
 Where each vertex in the triangulation has a density value that is used to calculate the number of points to render.
 With small and medium crowds this technique works best, since with very large crowds the resources allocated for each instance might be too scarce.
 
-\subsection{Achieving variety}
+\subsection{Achieving Variety}
 
 There is a lot of research into getting color variety, height change, accessories, animation variety.
 As they provided a cheap way to have a varied crowd and with instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.
