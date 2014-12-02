@@ -87,8 +87,8 @@ Firstly there is a \textit{crowd generation} problem, a modeller needs user-frie
 Secondly the crowd is an evolving entity, so a \textit{crowd dynamics model} is required to govern the state of the crowd over time.
 Thirdly, the model should be presented to the user, so a \textit{rendering} stage is needed.
 
-Crowd simulation and rendering has been an active research area as early as 1987 with the work on birds flocks by \cite{Reynolds1987}.
-There, he proved that by implementing some local rules in each entity a coherent global behaviour could be achieved.
+Crowd simulation and rendering has been an active research area as early as 1987 with a simulation of flocks of birds by \cite{Reynolds1987}.
+The author proved that a coherent global behaviour could be achieved by implementing a number of local rules in each entity.
 
 \section{Classifications}
 
@@ -100,31 +100,33 @@ Consequently, each of the stages defined in section~\ref{intro} will be treated 
 \subsection{Modelling Classifications}
 
 In order to simulate crowd behaviour a number of approaches have been proposed.
-As they shared certain similarities they can be divided using a common criteria such as time of the simulation and size of the modelled crowd.
+As they share certain similarities, they can be divided using a common criteria such as the simulation time  and the size of the modelled crowd.
 Regarding time, we have short-term simulations, medium-term simulations and long-term simulations.
-While in terms of size a distinction can be made among small, medium and big size crowds.
-We can also use as criteria the type of model used for the agents in the crowd, either \textbf{entity based}, all individuals are homogeneous, or \textbf{agent based}, each individual is intelligent and autonomous.
+While in terms of size, a distinction can be made among small, medium and big size crowds.
+The type of model used for the agents in the crowd can also be used as a criteria.
+Therefore there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.
 
 Generally, agent based or entity based systems are used for small and medium crowds.
-Due to the challenging nature of big size crowds the most common approach is to adopt a \textbf{flow based} simulation.
+While for big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
 
 \subsection{Rendering Classifications}
 
 The different types of rendering techniques can be classified in the following groups.
-\textbf{Dynamic mesh decimation} uses progressive meshes to obtain a coarser representation of the model mesh,~\cite{Hoppe1996}.
+\textbf{Dynamic mesh decimation}, progressive meshes are used to obtain a coarser representation of the model mesh,~\cite{Hoppe1996}.
 \textbf{Dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model,~\cite{Aubel2000}.
 \textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh,~\cite{Wand2002}.
 
 \section{Generating crowds}
 
 Before the crowd can be simulated or rendered it has to be generated.
-This task is usually has not been research as deeply as the rest.
-This step essentially involves setting the initial parameters at which the crowd operates.
+Unfortunately, this task has not been researched as deeply as the rest.
+This step essentially involves defining the initial parameters at which the crowd operates.
+For example, crowd size, goals, ..., and can also include visual parameters such as color or models for the agents.
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
-His technique allows the user select an brush operator(create individuals, change color, etc) and apply it in the crowd world space.
-Altered individuals in the crowd will be those in sight in the screen domain.
-Therefore an intuitive approach, as it is similar to what users as used to, is provided.
+The author technique provides tools for the user in the form of a brush operator(create individuals, change color, etc) and then the user can apply them in the crowd world space.
+Edited individuals in the crowd will be those in sight in the screen domain.
+Therefore an intuitive approach is provided, as it is similar to what users as used to.
 However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.
 
 Some of the challenges were met by \cite{Jordao2014}, whose method introduces the concept of crowd patches.
