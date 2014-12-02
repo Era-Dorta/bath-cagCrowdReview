@@ -7,7 +7,7 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage{mathtools}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{url}
@@ -67,6 +67,7 @@ For each relevant area or group, a representative paper is chosen, important con
 \clearpage %Start a new page
 \setcounter{page}{1}
 
+\columnsep 25.0pt %Column separation
 \begin{multicols}{2}
 CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 \section{Introduction}
@@ -225,8 +226,15 @@ Moreover, they rely on instancing, which is desirable as discussed in section~\r
 
 Crowds in specific situations has been simulated, for example \cite{deHeras2005} worked with a virtual Roman crowd in an urban environment.
 In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame.
+
+- Color modulation
+- Texture variation
+- Shape deformation
+- Outfit creation
+- Animation diversity
+
 As well as applying color modulation accelerated hardware on instances of the same individual model.
-\cite{ruiz2013} explored color, shape
+\cite{ruiz2013} proposed a memory efficient method to generate new animatable characters varying skin color, clothes and body size.
 
 \section{Conclusion}
 
