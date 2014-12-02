@@ -188,10 +188,11 @@ Bellow, we present in more detail the techniques commented in section~\ref{subse
 
 \subsection{Dynamic Mesh Decimation}
 
-Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternative to a traditional mesh.
-However this meshes can be used as a coarser representation, and consequently increasing performance.
-Provided that the decimation calculation is smaller than the total gain.
-A progressive mesh refinement GPU implementation was proposed by~\cite{Hu2009}.
+Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternative to traditional meshes.
+However, progressive meshes can be used as a coarser visual representation.
+Provided that the decimation calculation is smaller than the total gain, there will be an increase in rendering performance.
+Yet, the procedure has it's limits if rendering quality is to be maintained.
+Building on Hoppe's work, \cite{Hu2009} proposed a GPU implementation for progressive mesh refinement.
 
 %Notes for the future, change to something better
 They never compare with other implementations, neither CPU or GPU.
@@ -200,28 +201,32 @@ It looks like their code is not optimized and they only wanted to prove feasibil
 \subsection{Dynamically Generated Impostors}
 \label{subsec:DimGenImpostors}
 
-Impostors are 2D pre-computed billboards used instead of the full 3D human model, thus reducing the cost of the rendering stage as shown by~\cite{Aubel2000}.
+Impostors are 2D pre-computed billboards used in place of the full 3D mesh model, thus reducing the cost of the rendering stage, as shown by~\cite{Aubel2000}.
 However, when an impostor is rendered to an area larger than the impostor resolution, pixels from the impostor texture become noticeable.
 ~\cite{Millan2006} presented a GPU impostor implementation, which also used pseudo-instancing for further performance gains~\cite{zelsnack2004glsl}.
-More recent advances were made by~\cite{Ghiletiuc2013} with a client-server approach for mobile devices.
+More recent advances were made by~\cite{Ghiletiuc2013} with a client-server impostor implementation in mobile devices.
+Nevertheless, the bulk of the computation was still performed on the server side.
 
 \subsection{Point-Rendering}
 
-Point rendering uses points as a primitive to reduce the model complexity of the individuals in the crowd.
-Using less and less points as the model is further away from the camera.
-Multi-resolution point sample rendering in key frame animations achieves a rendering time independent of the complexity of the geometric model~\cite{Wand2002}.
-~\cite{Larkin2010} presented a point-rendering method that would render at real-time by limiting the resources of the whole crowd and deciding each level of detail using Delaunay triangulation. 
-Where each vertex in the triangulation has a density value that is used to calculate the number of points to render.
-With small and medium crowds this technique works best, since with very large crowds the resources allocated for each instance might be too scarce.
+Point rendering uses a point cloud subset from the mesh model to reduce the complexity of the individuals in the crowd.
+Using less points as the model moves further away from the camera.
+\cite{Wand2002} showed that by using multi-resolution point sample rendering in key frame animations, the rendering time becomes independent from the complexity of the geometric model.
+~\cite{Larkin2010} presented a point-rendering method that achieved real-time rendering by limiting the resources of the whole crowd, and sharing them with a level of detail value determined by a Delaunay triangulation. 
+Each vertex in the triangulation has a density value that is used to calculate the number of points to render.
+With small and medium crowds this technique works reasonably well.
+However, with very large crowds the resources allocated for each instance might be too scarce.
 
 \subsection{Achieving Variety}
 
-There is a lot of research into getting color variety, height change, accessories, animation variety.
-As they provided a cheap way to have a varied crowd and with instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.
+There have been research into applying color variety, height change, accessories, animation variety to copies of individuals.
+Since it is an inexpensive method to have a varied crowd.
+Moreover, they rely on instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.
 
-Crowds in specific situations has been simulated, for example \cite{deHeras2005} work with a virtual Roman crowd in an urban environment.
+Crowds in specific situations has been simulated, for example \cite{deHeras2005} worked with a virtual Roman crowd in an urban environment.
 In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame.
 As well as applying color modulation accelerated hardware on instances of the same individual model.
+\cite{ruiz2013} explored color, shape
 
 \section{Conclusion}
 
