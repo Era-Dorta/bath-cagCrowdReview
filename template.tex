@@ -1,7 +1,7 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGE SECTION
 %----------------------------------------------------------------------------------------
-\documentclass[6pt]{article}
+\documentclass[6pt]{article} %Document font size is 6pt and is an article
 \usepackage{multicol}
 
 \usepackage[english]{babel} % English language/hyphenation
@@ -22,6 +22,8 @@
 \fancyfoot[L]{} % Empty left footer
 \fancyfoot[C]{} % Empty center footer
 \fancyfoot[R]{\thepage} % Page numbering for right footer
+
+\setlength\parindent{0.0pt} %No indentation on the paragraphs
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -80,17 +82,17 @@ CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 %Include why crowd simulation is interesting in films and videogames????
 Crowds are encountered frequently, be it a large number of people in big shopping area, on a popular sports event, or at a demonstration.
 While also other types of crowds are also common, such as schools of fish or flocks of birds.
-While motives for simulating them range from: \textit{film industry} where it is not always possible or economically viable to have a real crowd,also in \textit{video games} as the game world might have need for a crowd, including \textit{disaster prevention and management} where they are used to aid in the decision making process as they provided a new source of data.
+While motives for simulating them range from: \textit{film industry} where it is not always possible or economically viable to have a real crowd,also in \textit{video games} as the game world might have need for a crowd, including \textit{disaster prevention and management} where they are used to aid in the decision making process as they provided a new source of data.\\
 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of the individuals could be affected by other members of the crowd.
 History shows how in some cases crowd of people behave in a well organized manner, while in others its individual act selfishly abandoning all social norms.
-When simulating this interactions with a naive approach, as the numbers of individuals in the crowd increase the computational cost of the interrelations calculation increments exponentially.
+When simulating this interactions with a naive approach, as the numbers of individuals in the crowd increase the computational cost of the interrelations calculation increments exponentially.\\
 
 This problem has actually a number of clearly differentiated areas.
 Firstly there is a \textit{crowd generation} problem, a modeller needs user-friendly tools in order to set up a scene in which a crowd is present.
 Secondly the crowd is an evolving entity, so a \textit{crowd dynamics model} is required to govern the state of the crowd over time.
-Thirdly, the model should be presented to the user, so a \textit{rendering} stage is needed.
+Thirdly, the model should be presented to the user, so a \textit{rendering} stage is needed.\\
 
 Crowd simulation and rendering has been an active research area as early as 1987 with a simulation of flocks of birds by \cite{Reynolds1987}.
 The author proved that a coherent global behaviour could be achieved by implementing a number of local rules in each entity.
@@ -110,7 +112,7 @@ As they share certain similarities, they can be divided using a common criteria 
 Regarding time, we have short-term simulations, medium-term simulations and long-term simulations.
 While in terms of size, a distinction can be made among small, medium and big size crowds.
 The type of model used for the agents in the crowd can also be used as a criteria.
-Therefore there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.
+Therefore there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.\\
 
 Generally, agent based or entity based systems are used for small and medium crowds.
 While for big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
@@ -128,17 +130,17 @@ The different types of rendering techniques can be classified in the following g
 Before the crowd can be simulated or rendered it has to be generated.
 Unfortunately, this task has not been researched as deeply as the rest.
 This step essentially involves defining the initial parameters at which the crowd operates.
-For example, crowd size, goals, ..., and can also include visual parameters such as color or models for the agents.
+For example, crowd size, goals, ..., and can also include visual parameters such as color or models for the agents.\\
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
 The author technique provides tools for the user in the form of a brush operator(create individuals, change color, etc) and then the user can apply them in the crowd world space.
 Edited individuals in the crowd will be those in sight in the screen domain.
 Therefore an intuitive approach is provided, as it is similar to what users as used to.
-However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.
+However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.\\
 
 Some of the shortcomings of the previous work were met by \cite{Jordao2014}, whose method introduced the concept of crowd patches.
 Such patch areas define the crowd behaviour and can be edited through a sculpting metaphor, while also addressing the problem of populating vast empty areas efficiently.
-What is more, crowd motion can be modified on the fly as the patches are editable in real time.
+What is more, crowd motion can be modified on the fly as the patches are editable in real time.\\
 %Or the high level of control is provided through to uses of patches????
 
 \section{Simulating Crowds}
@@ -197,7 +199,7 @@ Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternati
 However, progressive meshes can be used as a coarser visual representation.
 Provided that the decimation calculation is smaller than the total gain, there will be an increase in rendering performance.
 Yet, the procedure has it's limits if rendering quality is to be maintained.
-Building on Hoppe's work, \cite{Hu2009} proposed a GPU implementation for progressive mesh refinement.
+Building on Hoppe's work, \cite{Hu2009} proposed a GPU implementation for progressive mesh refinement.\\
 
 %Notes for the future, change to something better
 They never compare with other implementations, neither CPU or GPU.
@@ -226,10 +228,10 @@ However, with very large crowds the resources allocated for each instance might 
 
 There have been research into applying color variety, height change, accessories, animation variety to copies of individuals.
 Since it is an inexpensive method to have a varied crowd.
-Moreover, they rely on instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.
+Moreover, they rely on instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.\\
 
 Crowds in specific situations has been simulated, for example \cite{deHeras2005} worked with a virtual Roman crowd in an urban environment.
-In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame.
+In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame.\\
 
 - Color modulation
 - Texture variation
