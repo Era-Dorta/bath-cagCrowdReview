@@ -162,13 +162,21 @@ Nevertheless, this model is still quite simplistic......, real-time or not real-
 \subsection{Flow Based}
 
 \cite{hughes2003} proposed a flow model method to simulate large crowd behaviour.
+By using intelligent fluid flow, which is makes the fluid prefer certain paths, i.e. avoiding excessive congestive areas, a working model for pedestrian simulation was achieved.
+However it would not account for crowd flow in the individual speed.
+Therefore lane formation is not observed. 
+The previous model was improved by \cite{treuille2006} by adding continuum dynamics.
+Fixing the afore mention problems as well as undesirable dynamics oscillations in Hughes's model. 
 
 \subsection{Hybrid models}
 
 \cite{Narain2009} presented a agent-fluid hybrid model.
 Each agent has a preferred velocity and path, however on densely populated regions a incomprehensibility flow factor comes into play.
 This factor prevents the agents from packing together too closely.
-
+More recently \cite{lin2014} proposed also a  agent-fluid hybrid solution to long-range collision avoidance.
+When a the density is below a certain threshold a discrete collision avoidance is used.
+While after the threshold a fluid based lookahead algorithm is used.
+This technique allows for increasingly complex behaviour such as a bigger group splitting in two to make space for a smaller group to go through it.
 
 \section{Rendering crowds}
 
