@@ -1,6 +1,6 @@
 %----------------------------------------------------------------------------------------
-
-%\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+%	PACKAGE SECTION
+%----------------------------------------------------------------------------------------
 \documentclass[6pt]{article}
 \usepackage{multicol}
 
@@ -50,6 +50,11 @@
 	\end{minipage}
 \end{center}
 
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT SECTION
+%----------------------------------------------------------------------------------------
+
 \vfill %Space after the title
 \begin{abstract}
 In this we present a survey on crowd simulation techniques.
@@ -59,16 +64,15 @@ For each relevant area or group, a representative paper is chosen, important con
 \end{abstract}
 \vfill %Space after the abstract
 
-% IMPORTANT
-% ------------------------------------
-% HAS TO has 2000 words
-% ------------------------------------
-
 \clearpage %Start a new page
-\setcounter{page}{1}
 
+%----------------------------------------------------------------------------------------
+%	MAIN SECTION
+%----------------------------------------------------------------------------------------
+
+\setcounter{page}{1} %Set page number
 \columnsep 25.0pt %Column separation
-\begin{multicols}{2}
+\begin{multicols}{2} %Set for two columns
 CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 \section{Introduction}
 \label{intro}
@@ -244,8 +248,7 @@ As well as applying color modulation accelerated hardware on instances of the sa
 - Rendering there has a been a lot of work, previous processing in CPU moved to GPU
 - LOD techniques quite refined now, a lot of it is automatic, like LOD model generations or edition
 
-%\bibliographystyle{acmsiggraph}
-\bibliographystyle{apalike}
-\bibliography{template}
+\bibliographystyle{apalike} %Close to Harvard style
+\bibliography{template} %Include template.bib bibliography file
 \end{multicols}
 \end{document}
