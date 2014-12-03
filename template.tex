@@ -270,12 +270,19 @@ While on the second stage new characters are animated using the previously gener
 - Animation diversity
 
 \section{Conclusion}
-%TODO Write up
-- Generation is an under-researched area, but crowd brush metaphor solve may of the issues
-- Simulation still sacrifices a lot with large crowds -> flow approach
-- Agent based simulations are becoming predominant, difficult to find papers with the other paradigms
-- Rendering there has a been a lot of work, previous processing in CPU moved to GPU
-- LOD techniques quite refined now, a lot of it is automatic, like LOD model generations or edition
+We have seen an overview of the research techniques in crowd generation, simulation and rendering.
+The generation and editing areas are still not sufficiently research as to provided easy to use tools.
+However, important advances has been made, i.e. crowd brush metaphor presented by~\cite{Ulicny2004}.
+On the simulation side there is a clear trend to abandon entity based simulations for agent based ones, as well as a hybrid method approaches.
+Flow based simulations sacrifices too much detail, nevertheless hybrid approach seems to be addressing this issue.
+But this methods are still not general enough and produce artificial outcomes in certain situations.
+While on the rendering area, LOD techniques have been refined into research areas on their own.
+Such as progressive meshes or point cloud rendering.
+The use of instances with automatic colour, height or accessories variation optimizes the rendering stage.
+Moreover, most of them produce reasonable results automatically.
+In all the areas a lot of previous processing done by the CPU have been moved to the GPU.
+This has approach has produced significant performance increases.
+Still, a behavioural complex real-time simulation with easy editing and high quality rendering is still unachievable with the current techniques.
 
 \bibliographystyle{apalike} %Close to Harvard style
 \bibliography{template} %Include template.bib bibliography file
