@@ -77,6 +77,7 @@ Next, for each relevant area or group, a representative paper is chosen, importa
 \setcounter{page}{1} %Set page number
 \columnsep 25.0pt %Column separation
 \begin{multicols}{2} %Set for two columns
+%TODO 
 CHECK EACH PAPER HAS IT'S DRAWBACKS WRITTEN
 \section{Introduction}
 \label{intro}
@@ -131,27 +132,27 @@ Their advantage lies in choosing the best model according to the situation or ev
 \subsection{Rendering Classifications}
 \label{subsec:RenderingClassification}
 
-Rendering techniques can be classified attending at how they perform model reductions, in order to be able to render efficiently the huge amounts of data needed for crowd simulation.
-\textbf{Dynamic mesh decimation}, involves using simpler mesh representations.
-\textbf{Dynamically generated impostors}, this procedure involves displaying 2D billboards with fixed poses instead of the full model.
+Rendering techniques can be classified considering how they perform model reductions, since they have to be able to efficiently render the huge amounts of data needed for crowd simulation.
+\textbf{Dynamic mesh decimation}, involves adopting simpler mesh representations.
+\textbf{Dynamically generated impostors}, this procedure entails displaying 2D billboards with fixed poses instead of the full model.
 \textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh.
-Since creating a unique individual for each entity in the crowd would be impractical, a common procedure in rendering crowds involves sharing the same render model among several entities.
-Because this ``cloned'' models are visually undesirable, a method to infuse divergence in order to \textbf{achieve variety} required. 
+Since creating a unique individual for each entity in the crowd would be impractical, a common procedure in rendering crowds is to share the same render model among several entities.
+Because this ``cloned'' models are visually undesirable, a method to infuse divergence in order to \textbf{achieve variety} is required. 
 
 \section{Generating Crowds}
 
 Before the crowd can be simulated or rendered it has to be generated.
 Unfortunately, this task has not been researched as deeply as the rest.
-This step essentially involves defining the initial parameters at which the crowd operates.
+In this stage the initial parameters at which the crowd operates are defined.
 For example, crowd size, goals, ..., and can also include visual parameters such as color or models for the agents.\\
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
-The author technique provides tools for the user in the form of a brush operator(create individuals, change color, etc) and then the user can apply them in the crowd world space.
+The author technique provides tools for the user in the form of a brush operator(create individuals, change color, etc) and then those tools can be used in the crowd world space.
 Edited individuals in the crowd will be those in sight in the screen domain.
-Therefore an intuitive approach is provided, as it is similar to what users as used to.
+Therefore an intuitive approach is provided, as it is similar to what users are used to.
 However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.\\
 
-Some of the shortcomings of the previous work were met by \cite{Jordao2014}, whose method introduced the concept of crowd patches.
+Some of the shortcomings of the previous work were met by \cite{Jordao2014}, whose method utilizes crowd patches.
 Such patch areas define the crowd behaviour and can be edited through a sculpting metaphor, while also addressing the problem of populating vast empty areas efficiently.
 What is more, crowd motion can be modified on the fly as the patches are editable in real time.
 %Or the high level of control is provided through to uses of patches????
@@ -165,7 +166,7 @@ Below we describe in detail the approaches mentioned in section~\ref{subsec:Mode
 
 \cite{Helbing2000} presented a model where individuals are represented as particles with velocity, mass and forces.
 All individual goals are encoded as values in such components.
-The model was created to simulate pedestrians in panic situations.\\
+The model was designed to replicate pedestrian behaviour in panic situations.\\
 
 \cite{batty2003} introduced a similar pedestrian model although aimed at simulating carnivals and parades.
 The author's model is based on a cellular automata, where an agent step is encoding as moving from the current cell to a neighbour cell.
@@ -174,7 +175,7 @@ This technique is constrained to evaluating safety policies and it only has an o
 \subsection{Agent Based}
 
 \cite{helbing2002} did a complete study of a broad range scenarios in crowd behaviour, with special attention at panic versus not panic crowd behaviour.
-For all the situations a common pedestrian model was derived.\\
+A common pedestrian model applicable to all the situations was derived.\\
 
 \cite{raupp2001} presented a three fold approach to agent based simulations: scripted behaviours, behavioural rules, with events and reactions, and external controls to guide the behaviour.
 Controlling the complexity of the behaviours by group settings provides a flexible framework for crowd editing.\\
@@ -209,17 +210,17 @@ This technique shows advanced complex behaviour, such as a bigger group splittin
 The main obstacle to overcome with crowd rendering is how to simplify the scene in order to be rendered in real or feasible time.
 Hence, the goal in the following techniques is to reduce the computations in the rendering stage.
 A common approach consist of applying a model complexity reduction that is still visually unnoticeable.
-Bellow, we present in more detail the techniques commented in section~\ref{subsec:RenderingClassification} that are used to solve this issue.
+Bellow, we present in more detail the techniques commented in section~\ref{subsec:RenderingClassification}.
 
 \subsection{Dynamic Mesh Decimation}
 
 Progressive meshes were introduced by~\cite{Hoppe1996} as a compressed alternative to traditional meshes.
-However, progressive meshes can be used as a coarser visual representation.
+However, progressive meshes can be used as a coarser visual representation of the original mesh.
 Provided that the decimation calculation is smaller than the total gain, there will be an increase in rendering performance.
-Yet, the procedure has it's limits if rendering quality is to be maintained.\\
+Yet, the coarseness is limited if rendering quality is to be preserved.\\
 
 Building on Hoppe's work, \cite{Hu2009} proposed a GPU implementation for progressive mesh refinement.
-%Notes for the future, change to something better
+%TODO Notes for the future, change to something better
 They never compare with other implementations, neither CPU or GPU.
 It looks like their code is not optimized and they only wanted to prove feasibility of the implementation. 
 
@@ -229,6 +230,7 @@ It looks like their code is not optimized and they only wanted to prove feasibil
 Impostors are 2D pre-computed billboards used in place of the full 3D mesh model, thus reducing the cost of the rendering stage, as shown by~\cite{Aubel2000}.
 However, when an impostor is rendered to an area larger than the impostor resolution, pixels from the impostor texture become noticeable.\\
 
+%TODO Add drawback
 ~\cite{Millan2006} presented a GPU impostor implementation, which also used pseudo-instancing for further performance gains~\cite{zelsnack2004glsl}.\\
 
 More recent advances were made by~\cite{Ghiletiuc2013} with a client-server impostor implementation in mobile devices.
@@ -237,38 +239,38 @@ Nevertheless, the bulk of the computation was still performed on the server side
 \subsection{Point-Rendering}
 
 Point rendering uses a point cloud subset from the mesh model to reduce the complexity of the individuals in the crowd.
-Using less points as the model moves further away from the camera.
+Using less points as the camera moves further away from the model.
 \cite{Wand2002} showed that by using multi-resolution point sample rendering in key frame animations, the rendering time becomes independent from the complexity of the geometric model.\\
 
 ~\cite{Larkin2010} presented a point-rendering method that achieved real-time rendering by limiting the resources of the whole crowd, and sharing them with a level of detail value determined by a Delaunay triangulation. 
 Each vertex in the triangulation has a density value that is used to calculate the number of points to render.
 With small and medium crowds this technique works reasonably well.
-However, with very large crowds the resources allocated for each instance might be too scarce.
+However, with very large crowds the resources allocated for each instance can be insufficient.
 
 \subsection{Achieving Variety}
 
 There have been research into applying color variety, height change, accessories, animation variety to copies of individuals.
 Since it is an inexpensive method to have a varied crowd.
-Moreover, they rely on instancing, which is desirable as discussed in section~\ref{subsec:DimGenImpostors}.\\
+Moreover, they rely on instancing, which is a desirable property,~\cite{zelsnack2004glsl}.\\
 
 Crowds in specific situations has been simulated, for example \cite{deHeras2005} worked with a virtual Roman crowd in an urban environment.
-In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame.\\
+In this paper they avoided computing each character’s mesh deformation using a precomputed deformed one for each frame. As well as applying color modulation accelerated hardware on instances of the same individual model.\\
 
+\cite{ruiz2013} proposed a memory efficient method to generate new characters by varying skin color, clothes and body size.
+The author's method involves a preprocessing stage and a run time stage.
+In the first stage, assets are generated from the individuals, including texture maps, new animations, etc.
+This stage is done per body part mesh to increase asset reusability.
+While on the second stage new characters are animated using the previously generated assets.
+
+%TODO Write up
 - Color modulation
 - Texture variation
 - Shape deformation
 - Outfit creation
 - Animation diversity
 
-As well as applying color modulation accelerated hardware on instances of the same individual model.
-\cite{ruiz2013} proposed a memory efficient method to generate new characters by varying skin color, clothes and body size.
-The author's method involves a preprocessing stage and a run time stage.
-In the first stage, assets are generated from the individuals, including texture maps, new animations, etc.
-This stage is done per body part mesh to increase asset reusability.
-While on the second stage new characters are animated using the previously generated assets. 
-
 \section{Conclusion}
-
+%TODO Write up
 - Generation is an under-researched area, but crowd brush metaphor solve may of the issues
 - Simulation still sacrifices a lot with large crowds -> flow approach
 - Agent based simulations are becoming predominant, difficult to find papers with the other paradigms
