@@ -139,7 +139,8 @@ Their advantage lies in choosing the best model according to the situation or ev
 \subsection{Rendering Classifications}
 \label{subsec:RenderingClassification}
 
-Rendering techniques can be classified considering how they perform model reductions, since they have to be able to efficiently render the huge amounts of data needed for crowd simulation.
+Rendering techniques can be classified considering how they perform model reductions, since they have to be able to efficiently render the huge amounts of data needed for crowd simulation.\\
+
 \textbf{Dynamic mesh decimation}, involves adopting simpler mesh representations.
 \textbf{Dynamically generated impostors}, this procedure entails displaying 2D billboards with fixed poses instead of the full model.
 \textbf{Point-rendering} techniques build multi-resolution representations using point samples from the mesh.
@@ -162,7 +163,7 @@ However it has certain limitations, such as lack of direct control over crowd be
 Some of the shortcomings of the previous work were met by \cite{Jordao2014}, whose method utilizes crowd patches.
 Such patch areas define the crowd behaviour and can be edited through a sculpting metaphor, while also addressing the problem of populating vast empty areas efficiently.
 What is more, crowd motion can be modified on the fly as the patches are editable in real time.
-%Or the high level of control is provided through to uses of patches????
+Nonetheless, individual paths cannot be controlled and only linear patch transformation was explored.
 
 \section{Simulating Crowds}
 
@@ -173,7 +174,8 @@ Below we describe in detail the approaches mentioned in section~\ref{subsec:Mode
 
 \cite{Helbing2000} presented a model where individuals are represented as particles with velocity, mass and forces.
 All individual goals are encoded as values in such components.
-The model was designed to replicate pedestrian behaviour in panic situations.\\
+The model was designed to replicate pedestrian behaviour in panic situations.
+Shortcomings are associated with the restricted goal of the simulation, such as difficult per group control and simplistic behaviour.\\
 
 \cite{batty2003} introduced a similar pedestrian model although aimed at simulating carnivals and parades.
 The author's model is based on a cellular automata, where an agent step is encoding as moving from the current cell to a neighbour cell.
@@ -185,12 +187,13 @@ This technique is constrained to evaluating safety policies and it only has an o
 A common pedestrian model applicable to all the situations was derived.\\
 
 \cite{raupp2001} presented a three fold approach to agent based simulations: scripted behaviours, behavioural rules, with events and reactions, and external controls to guide the behaviour.
-Controlling the complexity of the behaviours by group settings provides a flexible framework for crowd editing.\\
+Controlling the complexity of the behaviours by group settings provides a flexible framework for crowd editing.
+But complex individual behaviour was not been achieved.\\
 
 More recent techniques add a counterflow paradigm, where agents not only take into account trail formation but also collision avoidance, \cite{heliovaara2012}.
 Previous methods create unrealistic jams and collision in counterflow situations.
 However this technique is able to solve them successfully.
-Nevertheless, this model is still quite simplistic......, real-time or not real-time???
+Nevertheless, this model is still fails to account for other behaviours as it only concerned with counter-flow situations.
 
 \subsection{Flow Based}
 
@@ -199,7 +202,9 @@ An intelligent fluid tends to prefer certain paths, i.e. avoiding excessive cong
 However, it would not take into account crowd flow in the individual speeds, therefore preventing lane formation.\\
 
 The previous model was improved by \cite{treuille2006} with the addition of continuum dynamics.
-Fixing the afore mention problems as well as undesirable oscillations in Hughes's model. 
+Fixing the afore mention problems as well as undesirable oscillations in Hughes's model.
+Like other flow based models, this technique fails to take into account individual variability.
+Moreover it is limited to have a single common goal for all the characters.
 
 \subsection{Hybrid Models}
 
@@ -211,6 +216,7 @@ More recently \cite{lin2014} proposed also an agent-fluid hybrid solution to lon
 When the density is below a certain threshold a discrete collision avoidance is used,
 while after the threshold a fluid based lookahead algorithm controls the behaviour.
 This technique shows advanced complex behaviour, such as a bigger group splitting in two to make space for a smaller group to go through it.
+However it some cases it leads to unnatural groups separations.
 
 \section{Rendering Crowds}
 
