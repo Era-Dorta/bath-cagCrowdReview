@@ -233,9 +233,7 @@ Provided that the decimation calculation is smaller than the total gain, there w
 Yet, the coarseness is limited if rendering quality is to be preserved.\\
 
 Building on Hoppe's work, \cite{Hu2009} proposed a GPU implementation for progressive mesh refinement.
-%TODO Notes for the future, change to something better
-They never compare with other implementations, neither CPU or GPU.
-It looks like their code is not optimized and they only wanted to prove feasibility of the implementation. 
+Anyhow, the author's implementation is more a prove of feasibility than a real improvement in performance.
 
 \subsection{Dynamically Generated Impostors}
 \label{subsec:DimGenImpostors}
@@ -244,7 +242,8 @@ Impostors are 2D pre-computed billboards used in place of the full 3D mesh model
 However, when an impostor is rendered to an area larger than the impostor resolution, pixels from the impostor texture become noticeable.\\
 
 %TODO Add drawback
-~\cite{Millan2006} presented a GPU impostor implementation, which also used pseudo-instancing for further performance gains~\cite{zelsnack2004glsl}.\\
+~\cite{Millan2006} presented a GPU impostor implementation, which also used pseudo-instancing for further performance gains~\cite{zelsnack2004glsl}.
+Yet, their implementation is only designed for a single GPU.\\
 
 More recent advances were made by~\cite{Ghiletiuc2013} with a client-server impostor implementation in mobile devices.
 Nevertheless, the bulk of the computation was still performed on the server side.
@@ -274,6 +273,7 @@ The author's method involves a preprocessing stage and a run time stage.
 In the first stage, assets are generated from the individuals, including texture maps, new animations, etc.
 This stage is done per body part mesh to increase asset reusability.
 While on the second stage new characters are animated using the previously generated assets.
+However, the method is still not fully automatic and it needs pregenerated rigs.
 
 % Topics to look for in papers are to be added in this area 
 %- Color modulation
