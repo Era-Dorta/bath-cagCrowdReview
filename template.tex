@@ -62,9 +62,9 @@
 \normalsize %Make abstract font a big bigger
 In this we present a survey on crowd simulation techniques.
 The whole crowd simulation pipeline is discussed.
-Including crowd generation and editing, behaviour simulation, with path and collision avoidance, and rendering techniques.
-Firstly, modelling and rendering classifications are drawn.
-Next, for each relevant area or group, a representative paper is chosen, important contributions are outlined and recent research breakthroughs are given.
+Crowd generation and editing, behaviour simulation, with path and collision avoidance, and rendering techniques.
+First, modelling and rendering classifications are drawn.
+Next, for each relevant area or group, a representative paper is chosen, important contributions are outlined, and recent research breakthroughs are given.
 \end{abstract}
 \vfill %Space after the abstract
 
@@ -90,17 +90,17 @@ Next, for each relevant area or group, a representative paper is chosen, importa
 \label{intro}
 
 %Include why crowd simulation is interesting in films and videogames????
-Crowds are encountered frequently, be it a large number of people in big shopping area, on a popular sports event, or at a demonstration.
+Crowds are encountered frequently, for example, large numbers of people in big shopping areas, on a popular sports events, or at a demonstrations.
 Non human crowds are quite common as well, such as schools of fish or flocks of birds.
 There is a wide range of motives for their simulation.
-For instance, in the \textit{films} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid in the decision making process as crowds provide new sources of data.\\
+For instance, in the \textit{film} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid in the decision making process as simulating crowds behaviour provides new sources of data.\\
 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of an individual could affected other crowd members.
 History shows how in some cases, crowds of people behave in a well organized manner, while in others its individuals act selfishly, abandoning all social norms.
 When simulating this interactions with a naive approach, as the numbers of characters in the crowd increases the computational cost of the interrelations calculation increments exponentially.\\
 
-This problem has a number of clearly differentiated areas.
+This topic has a number of clearly differentiated areas.
 Firstly, there is a \textit{crowd generation} problem, a modeller needs user-friendly tools in order to set up a scene in which a crowd is present.
 Secondly, the crowd is an evolving entity, so a \textit{crowd dynamics model} is required to govern the behaviour of the crowd over time.
 Thirdly, the model should be presented to the user, so a \textit{rendering} stage is needed.\\
@@ -110,10 +110,10 @@ The author proved that a coherent global behaviour could be achieved by implemen
 
 \section{Classifications}
 
-A clear line can be drawn between real-time simulation (games) and non real-time simulation (films).
-Since the requirements for each simulation are quite different and so are the techniques used in each area.
+A clear line can be drawn between real-time simulation (e.g. games) and non real-time simulation (e.g. films).
+The requirements for each simulation are quite different and so are the techniques used in each area.
 However, with such a broad area, a more detailed exploration is required.
-Consequently, each of the stages defined in section~\ref{intro} will be treated independently.
+Consequently, each of the stages defined in Section~\ref{intro} will be treated independently.
 
 \subsection{Modelling Classifications}
 \label{subsec:ModelClassification}
@@ -121,20 +121,18 @@ Consequently, each of the stages defined in section~\ref{intro} will be treated 
 In order to simulate crowd behaviour a number of approaches have been proposed.
 As they share certain similarities, criteria such as the simulation time or the the size of the modelled crowd can be used for classification.\\
 
-Regarding time, we have short-term simulations, medium-term simulations and long-term simulations.
-While in terms of size, a distinction can be made among small, medium and big size crowds.\\
-
 The type of model used for the agents in the crowd can also be used as a criteria.
 Therefore, there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.
-Generally, agent based or entity based systems are used for small and medium crowds.\\
+Generally, agent based and entity based systems are used for small and medium size crowds.\\
 
-While for big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
+For big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
 In flow based simulations the discrete individual is disregarded in favour of a fluid based approach.
 Evidently, this assumption looses effectiveness as the density of entities in the crowd decreases.
-Hence, it will typically be considered only after a certain density threshold is reached.\\
+This type of simulation is typically used when the crowd reaches a predetermined density threshold.\\
 
 Lastly, \textbf{hybrid methods} are based on two or more of the afore mentioned techniques.
-Their advantage lies in choosing the best model according to the situation or even directly mixing characteristics as needed. 
+Their advantage lies in choosing the best model according to the situation or even directly mixing characteristics as needed.
+For example, using an agent based simulation with low density crowds, and dynamically switching to a flow based simulation if a high density situation occurs.
 
 \subsection{Rendering Classifications}
 \label{subsec:RenderingClassification}
@@ -142,23 +140,23 @@ Their advantage lies in choosing the best model according to the situation or ev
 Rendering techniques can be classified considering how they perform model reductions, since they have to be able to efficiently render the huge amounts of data needed for crowd simulation.\\
 
 Firstly, \textbf{dynamic mesh decimation} involves adopting simpler mesh representations.
-Secondly, \textbf{Dynamically generated impostors} entails displaying 2D billboards with fixed poses instead of the full model.
+Secondly, \textbf{Dynamically generated impostors} entails displaying 2D billboards instead of the full model.
 Thirdly, \textbf{point-rendering} techniques build multi-resolution representations using point samples from the mesh.
 Finally, creating a unique individual for each entity in the crowd would be impractical, a common procedure in rendering crowds is to share the same render model among several entities.
-Because this ``cloned'' models are visually undesirable, a method to infuse divergence in order to \textbf{achieve variety} is required. 
+Because this ``cloned'' models are visually undesirable, methods to infuse divergence are required to \textbf{achieve variety}. 
 
 \section{Generating Crowds}
 \label{sec:CrowdGen}
 
 Before the crowd can be simulated or rendered it has to be generated.
-Unfortunately, this task has not been researched as deeply as the rest.
+Unfortunately, this task has not been researched as deeply as the other areas.
 In this stage the initial parameters at which the crowd operates are defined.
-For example, crowd size, goals, etc; other visual parameters could also be included, such as color or meshes  for the agents.\\
+For example, crowd size, goals, collision range, minimum/maximum speed, etc.\\
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
 The author's technique provides tools in the form of a brush operator(create individuals, change color, etc) and then those tools can be used in the crowd world space.
 The entities edited in the crowd will be those in sight in the screen domain.
-Therefore, an intuitive approach is provided, as it is similar to what users are used to.
+Therefore, as brush metaphors are common in other areas, an easy to use technique is provided.
 However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.\\
 
 Some of the shortcomings in the previous work were met by \cite{Jordao2014}, whose method utilizes crowd patches.
@@ -168,8 +166,8 @@ Nonetheless, individual paths cannot be controlled and only linear patch transfo
 
 \section{Simulating Crowds}
 
-As stated in section~\ref{intro}, following a naive approach leads to intractable computing times in simulations that handle more than a small sized crowd.
-Below we describe in detail the approaches mentioned in section~\ref{subsec:ModelClassification}. 
+As stated in Section~\ref{intro}, following a naive approach leads to intractable computing times in simulations that handle more than a small sized crowd.
+Below we describe in detail the approaches mentioned in Section~\ref{subsec:ModelClassification}. 
 
 \subsection{Entity Based}
 
@@ -184,12 +182,12 @@ This technique is constrained to evaluating safety policies and it only has an o
 
 \subsection{Agent Based}
 
-\cite{helbing2002} did a complete study of crowd actions in a broad range scenarios, with special attention at panic versus not panic crowd behaviour.
-A common pedestrian model applicable to all the situations was derived.\\
-
 \cite{raupp2001} presented a three fold approach to agent based simulations: scripted behaviours, behavioural rules, with events and reactions, and external controls to guide the behaviour.
 Controlling the complexity of the behaviours by group settings provides a flexible framework for crowd editing.
 But complex individual behaviour was not achieved.\\
+
+\cite{helbing2002} did a complete study of crowd actions in a broad range scenarios, with special attention at panic versus not panic crowd behaviour.
+A common pedestrian model applicable to all the situations was derived.\\
 
 More recent techniques add a counterflow paradigm, where agents not only take into account trail formation but also collision avoidance, \cite{heliovaara2012}.
 The previous methods generate unrealistic jams and collision in counterflow situations, that are successfully solved using this technique.
@@ -223,7 +221,7 @@ However, in some cases it leads to unnatural groups separations.
 The main obstacle to overcome with crowd rendering is, how to simplify the scene in order to render it in real or at least feasible time.
 Hence, the goal in the following techniques is to reduce the computations in the rendering stage.
 A common approach consist of applying a model complexity reduction that is still visually unnoticeable.
-Bellow, we present in more detail the techniques commented in section~\ref{subsec:RenderingClassification}.
+Below, we present in more detail the techniques commented in Section~\ref{subsec:RenderingClassification}.
 
 \subsection{Dynamic Mesh Decimation}
 
@@ -273,8 +271,8 @@ As well as applying hardware accelerated color modulation on instances of the sa
 \cite{ruiz2013} proposed a memory efficient method to generate new characters by varying skin color, clothes and body size.
 The author's method involves a preprocessing stage and a run time stage.
 In the first stage, assets are generated from the individuals, including texture maps, new animations, etc.
-This stage is done per body part mesh to increase asset reusability.
-While on the second stage new characters are animated using the previously generated assets.
+This phase is done per body part mesh to increase asset reusability.
+While on the second step new characters are animated using the previously generated assets.
 However, the method is still not fully automatic and it needs pregenerated rigs.
 % Topics to look for in papers are to be added in this area 
 %- Color modulation
@@ -286,19 +284,19 @@ However, the method is still not fully automatic and it needs pregenerated rigs.
 \section{Conclusion}
 We have seen an overview of the research techniques applied in crowd generation, simulation and rendering.
 The generation and editing areas are still not sufficiently mature as to provide easy to use tools.
-However, important advances have been made, i.e. crowd brush metaphor or the crowd patches discussed in section~\ref{sec:CrowdGen}.\\
+However, important advances have been made, i.e. crowd brush metaphor or the crowd patches discussed in Section~\ref{sec:CrowdGen}.\\
 
 On the simulation side, there is a clear trend to abandon entity based simulations in favour of agent based simulations and hybrid approaches.
 Flow based simulations sacrifices too much detail, nevertheless hybrid simulations tend to address the issue.
 Nevertheless, this methods are still not general enough.
 Besides, artificial outcomes generated under certain parameters.\\
 
-While on the rendering area, LOD techniques have been refined into research areas on their own.
+On the rendering area, LOD techniques have been refined into research areas on their own.
 Such as progressive meshes or point cloud rendering.
 The use of instances with automatic colour, height or accessories variation optimizes the rendering stage.
 Moreover, most of them produce reasonable results without manual intervention.\\
 
-In all the areas a lot of processing previously done by the CPU have been moved to the GPU.
+In all these areas, a lot of processing previously done by the CPU have been moved to the GPU, \cite{Hu2009}, \cite{Millan2006}.
 This line of research has produced significant performance gains.
 But, a behaviourally complex, real-time simulation with easy editing and high quality rendering is still unachievable with the current techniques.
 
