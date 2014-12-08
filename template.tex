@@ -93,7 +93,7 @@ Next, for each relevant area or group, a representative paper is chosen, importa
 Crowds are encountered frequently, be it a large number of people in big shopping area, on a popular sports event, or at a demonstration.
 Non human crowds are quite common as well, such as schools of fish or flocks of birds.
 There is a wide range of motives for their simulation.
-For instance, in the \textit{films} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid in the decision making process as crowds provide new sources of data.\\
+For instance, in the \textit{films} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid in the decision making process as crowds provide new sources of data.\\ %Disaster prevention rephrase entirely, say how the data is provided, by behavour simulation
 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of an individual could affected other crowd members.
@@ -110,7 +110,7 @@ The author proved that a coherent global behaviour could be achieved by implemen
 
 \section{Classifications}
 
-A clear line can be drawn between real-time simulation (games) and non real-time simulation (films).
+A clear line can be drawn between real-time simulation (games) and non real-time simulation (films). % ,e.g films, or (e.g. films)
 Since the requirements for each simulation are quite different and so are the techniques used in each area.
 However, with such a broad area, a more detailed exploration is required.
 Consequently, each of the stages defined in section~\ref{intro} will be treated independently.
@@ -121,8 +121,8 @@ Consequently, each of the stages defined in section~\ref{intro} will be treated 
 In order to simulate crowd behaviour a number of approaches have been proposed.
 As they share certain similarities, criteria such as the simulation time or the the size of the modelled crowd can be used for classification.\\
 
-Regarding time, we have short-term simulations, medium-term simulations and long-term simulations.
-While in terms of size, a distinction can be made among small, medium and big size crowds.\\
+Regarding time, we have short-term simulations, medium-term simulations and long-term simulations. %Totally redundant, is only saying we can move
+While in terms of size, a distinction can be made among small, medium and big size crowds.\\ % in those areas
 
 The type of model used for the agents in the crowd can also be used as a criteria.
 Therefore, there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.
@@ -131,17 +131,18 @@ Generally, agent based or entity based systems are used for small and medium cro
 While for big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
 In flow based simulations the discrete individual is disregarded in favour of a fluid based approach.
 Evidently, this assumption looses effectiveness as the density of entities in the crowd decreases.
-Hence, it will typically be considered only after a certain density threshold is reached.\\
+Hence, it will typically be considered only after a certain density threshold is reached.\\ %Not clear, rephrase, only used in dense crowds
 
 Lastly, \textbf{hybrid methods} are based on two or more of the afore mentioned techniques.
 Their advantage lies in choosing the best model according to the situation or even directly mixing characteristics as needed. 
+%Example on how do they do it
 
 \subsection{Rendering Classifications}
 \label{subsec:RenderingClassification}
 
 Rendering techniques can be classified considering how they perform model reductions, since they have to be able to efficiently render the huge amounts of data needed for crowd simulation.\\
 
-Firstly, \textbf{dynamic mesh decimation} involves adopting simpler mesh representations.
+Firstly, \textbf{dynamic mesh decimation} involves adopting simpler mesh representations. %If going to enumarate, then use the begin enumarate.
 Secondly, \textbf{Dynamically generated impostors} entails displaying 2D billboards with fixed poses instead of the full model.
 Thirdly, \textbf{point-rendering} techniques build multi-resolution representations using point samples from the mesh.
 Finally, creating a unique individual for each entity in the crowd would be impractical, a common procedure in rendering crowds is to share the same render model among several entities.
@@ -150,16 +151,25 @@ Because this ``cloned'' models are visually undesirable, a method to infuse dive
 \section{Generating Crowds}
 \label{sec:CrowdGen}
 
-Before the crowd can be simulated or rendered it has to be generated.
+Before the crowd can be simulated or rendered it has to be generated. %Too obvious
 Unfortunately, this task has not been researched as deeply as the rest.
 In this stage the initial parameters at which the crowd operates are defined.
-For example, crowd size, goals, etc; other visual parameters could also be included, such as color or meshes  for the agents.\\
+For example, crowd size, goals, etc; other visual parameters could also be included, such as color or meshes  for the agents.\\ %Add a couple more examples
+
+%Always start with the first most obvious inneficient approach, paper
 
 \cite{Ulicny2004} proposed a brush metaphor to manipulate crowds.
 The author's technique provides tools in the form of a brush operator(create individuals, change color, etc) and then those tools can be used in the crowd world space.
 The entities edited in the crowd will be those in sight in the screen domain.
-Therefore, an intuitive approach is provided, as it is similar to what users are used to.
+Therefore, an intuitive approach is provided, as it is similar to what users are used to. %Say explicitly brush metaphor is from another areas
 However it has certain limitations, such as lack of direct control over crowd behaviour or difficulty to select individuals in cluttered environments.\\
+
+%Do a time list with the most important things on each area, the way to do it is, this person did this based on this and this other 3 or 4 group citations
+%used/improved the method
+
+%Also can say, following this survey this and this happend, and more recently this and this
+
+%Make clear the conecction between the different papers
 
 Some of the shortcomings in the previous work were met by \cite{Jordao2014}, whose method utilizes crowd patches.
 Such patch areas define the crowd behaviour and can be edited through a sculpting metaphor, while also addressing the problem of populating vast empty areas efficiently.
