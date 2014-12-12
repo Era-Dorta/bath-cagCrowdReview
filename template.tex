@@ -90,15 +90,15 @@ Next, for each relevant area or group, a representative paper is chosen, importa
 \label{intro}
 
 %Include why crowd simulation is interesting in films and videogames????
-Crowds are encountered frequently, for example, large numbers of people in big shopping areas, on a popular sports events, or at a demonstrations.
+Crowds are encountered frequently, for example, large numbers of people in big shopping areas, during popular sports events or demonstrations.
 Non human crowds are quite common as well, such as schools of fish or flocks of birds.
 There is a wide range of motives for their simulation.
-For instance, in the \textit{film} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid in the decision making process as simulating crowds behaviour provides new sources of data.\\
+For instance, in the \textit{film} industry where it is not always possible or economically viable to have a real crowd, in the \textit{video games} industry as a crowd might be required in a virtual world and lastly, in \textit{disaster prevention and management} where they are used to aid the decision making process as simulating the behaviour of a crowd provides new sources of data.\\
 
 A crowd is much more than the collections of individuals that form it.
 And as such the behaviour of an individual could affected other crowd members.
 History shows how in some cases, crowds of people behave in a well organized manner, while in others its individuals act selfishly, abandoning all social norms.
-When simulating this interactions with a naive approach, as the numbers of characters in the crowd increases the computational cost of the interrelations calculation increments exponentially.\\
+When simulating this interactions with a naive approach, as the numbers of characters in the crowd increases, the computational cost of the interrelations calculation grows exponentially.\\
 
 This topic has a number of clearly differentiated areas.
 Firstly, there is a \textit{crowd generation} problem, a modeller needs user-friendly tools in order to set up a scene in which a crowd is present.
@@ -119,7 +119,7 @@ Consequently, each of the stages defined in Section~\ref{intro} will be treated 
 \label{subsec:ModelClassification}
 
 In order to simulate crowd behaviour a number of approaches have been proposed.
-As they share certain similarities, criteria such as the simulation time or the the size of the modelled crowd can be used for classification.\\
+As they share certain features, criteria such as the simulation time or the the size of the modelled crowd can be used for classification.\\
 
 The type of model used for the agents in the crowd can also be used as a criteria.
 Therefore, there are \textbf{entity based} simulations, where all individuals are homogeneous, or \textbf{agent based} simulations, where each individual is intelligent and autonomous.
@@ -128,7 +128,7 @@ Generally, agent based and entity based systems are used for small and medium si
 For big size crowds, due to their challenging nature, \textbf{flow based} simulations are adopted as the most common approach.
 In flow based simulations the discrete individual is disregarded in favour of a fluid based approach.
 Evidently, this assumption looses effectiveness as the density of entities in the crowd decreases.
-This type of simulation is typically used when the crowd reaches a predetermined density threshold, i.e. on dense crowds\\
+These type of simulation is typically used when the crowd reaches a predetermined density threshold, i.e. on dense crowds\\
 
 Lastly, \textbf{hybrid methods} are based on two or more of the afore mentioned techniques.
 Their advantage lies in choosing the best model according to the situation or even directly mixing characteristics as needed.
@@ -193,7 +193,7 @@ A common pedestrian model applicable to all the situations was derived.\\
 
 More recent techniques add a counterflow paradigm, where agents take into account long collision avoidance in addition to trail formation, \cite{heliovaara2012}.
 The previous methods generate unrealistic jams and collision in counterflow situations, that are successfully solved using this technique.
-Nevertheless, this model is still fails to account for other behaviours, as it is only concerned with counter-flow situations.
+Nevertheless, this model still fails to account for other behaviours, as it is only concerned with counter-flow situations.
 
 \subsection{Flow Based}
 
@@ -202,7 +202,7 @@ An intelligent fluid tends to prefer certain paths, i.e. avoiding excessive cong
 However, it would not take into account crowd flow in the individual speeds, which prevents lane formation.\\
 
 The previous model was improved by \cite{treuille2006} with the addition of continuum dynamics.
-Fixing the afore mention problems as well as undesirable oscillations in Hughes's model.
+Fixing the aforementioned problems as well as undesirable oscillations in Hughes's model.
 Like other flow based models, this technique fails to take into account individual variability.
 Moreover, it is limited to have a single common goal for all the characters.
 
